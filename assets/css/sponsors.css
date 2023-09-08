@@ -1,0 +1,483 @@
+/*Font family import from Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html,body {
+  background: #FFF3E6;
+}
+
+.sponsors-bg {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: url("../img/bg/un-hall.jpg") no-repeat;
+  background-size: 100% 100%;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+}
+.sponsors-bg::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  padding-top: 10px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  transition: background-color 0.6s;
+  z-index: 1000;
+}
+nav.sticky-nav {
+  background-color: #0D335D;
+}
+
+nav:after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+nav .logo {
+  float: left;
+}
+
+nav ul {
+  float: right;
+  list-style: none;
+  margin-right: 40px;
+  position: relative;
+}
+
+nav ul li {
+  float: left;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 70px;
+  font-size: 18px;
+  padding: 8px 15px;
+  transition: color 0.3s;
+}
+nav ul li:hover {
+  border-bottom: solid 2px white;
+}
+
+nav ul ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 90px;
+  opacity: 0;
+  visibility: hidden;
+  transition: top 0.3s;
+}
+nav ul li:hover > ul {
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+nav ul ul li {
+  position: relative;
+  margin: 0px;
+  width: 170px;
+  float: none;
+  display: list-item;
+  text-align: left;
+  background: rgba(145, 167, 171, 0.5);
+}
+
+nav.sticky-nav ul ul li {
+  background: #0D335D;
+}
+nav ul ul li a{
+  line-height: 40px;
+}
+
+.show, input {
+  display: none;
+}
+.icon {
+  display: none;
+}
+
+.sponsors-title{
+  position: relative;
+  cursor: default;
+}
+.sponsors-title h1 {
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  margin: 0 2rem;
+}
+
+.current-sponsors {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 5rem;
+  justify-content: center;
+  align-items: center;
+}
+.current-sponsors h2 {
+  color: #0D335D;
+  font-size: 2rem;
+  text-align: center;
+}
+.current-sponsors hr {
+  width: 10%;
+  height: 3px;
+  border: none;
+  background: red;
+  margin: auto;
+  margin-top: 20px;
+}
+.current-sponsors p {
+  color: #1A508B;
+  font-size: 1.2rem;
+  margin: 1rem 3rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.present-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.present-box a{
+  text-decoration: none;
+}
+.sponsor-box {
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  background-color: white;
+  transition: all 0.4s ease-out;
+  border: solid 1px #06182d;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px #bfbfbf;
+}
+.sponsor-box:hover {
+  transform: scale(1.04);
+}
+.logo-box{
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+}
+.sponsor-logo {
+  margin: 0;
+  width: 100%;
+}
+.sponsor-desc {
+  padding: 1rem;
+  background-color: #06182d;
+  transition: all 0.3s;
+  height: 30%;
+}
+.desc-box{
+  transition: all 0.3s;
+}
+.sponsor-box:hover .desc-box {
+  border-left: solid 5px red;
+  padding-left: 1rem;
+}
+.sponsor-name {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  color: white;
+}
+.sponsor-info {
+  font-size: 0.8rem;
+  color: white;
+}
+
+.old-sponsors {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 5rem;
+  justify-content: center;
+  align-items: center;
+}
+.old-sponsors h2 {
+  color: #0D335D;
+  font-size: 2rem;
+  text-align: center;
+}
+.old-sponsors hr {
+  width: 10%;
+  height: 3px;
+  border: none;
+  background: red;
+  margin: auto;
+  margin-top: 20px;
+}
+.past-slider {
+  margin: 2rem 0;
+}
+
+.slide img {
+  height: 10em;
+  width: 10em;
+  background-color: white;
+  padding: 10px;
+  border: solid 1px black;
+}
+
+.footer-container {
+  max-width: 1170px;
+  margin: auto;
+}
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer {
+  border-top: solid 30px #FFF3E6;
+  background-color: #06182d;
+  padding-top: 100px;
+}
+.footer-col {
+  width: 50%;
+  padding: 0 15px;
+  margin-bottom: 150px;
+  padding-left: 50px;
+}
+.footer-col h4 {
+  font-size: 18px;
+  color: white;
+  position: relative;
+  margin-bottom: 35px;
+}
+.footer-col h4::before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  bottom: -10px;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+  background-color: red;
+}
+.footer-col p {
+  color: white;
+  font-size: 15px;
+}
+.footer-col .social a{
+  border: solid 1px white;
+  padding-top: 2px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255,255,255,0.1);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.5s ease;
+}
+.footer-col .social a:hover {
+  color: #0D335D;
+  background-color: white;
+}
+.copyright-footer {
+  background-color: black;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.copyright-footer p {
+  color: white;
+}
+@media (min-width:1100px){
+  .present-box{
+    padding: 0 10rem;
+  }
+}
+@media (min-width:1624px){
+  .present-box{
+    padding: 0 20rem;
+  }
+}
+@media (min-width:1950px){
+  .present-box{
+    padding: 0 30rem;
+  }
+}
+
+@media (max-width:775px){
+  nav {
+    background: #0D335D;
+    padding-bottom: 10px;
+    flex-direction: column;
+  }
+
+  nav ul li, nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+  nav ul ul {
+    top: 70px;
+    position: static;
+    border-top: none;
+    float: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  nav ul ul li {
+    padding-left: 60px;
+    line-height: 70px;
+    background: transparent;
+  }
+  nav ul ul li:hover {
+    border: none;
+  }
+  .show {
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .icon {
+    display: block;
+    color: white;
+    position: absolute;
+    right: 40px;
+    line-height: 70px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  nav ul li:hover {
+    border-bottom: none;
+  }
+
+  .sponsors-title h1 {
+    margin: 0 3.5rem;
+  }
+  .show + a, ul {
+    display: none;
+  }
+  [id=about]:checked + ul,[id=bars]:checked + ul {
+    display: block;
+  }
+
+  .slide img {
+    height: 8em;
+    width: 8em;
+    padding: 10px;
+  }
+
+  .sponsor-desc{
+    padding: 0.6rem;
+  }
+  .sponsor-box {
+    width: 230px;
+    height: 280px;
+    margin: 20px;
+  }
+  .sponsor-name{
+    font-size: 1rem;
+    letter-spacing: normal;
+  }
+  .sponsor-info{
+    font-size: 0.7rem;
+  }
+  .sponsor-box:hover {
+    transform: scale(1);
+  }
+  .present-box{
+    padding: 0;
+  }
+
+}
+
+@media (max-width:624px) {
+  .footer-col {
+    width: 100%;
+  }
+
+  .sponsors-title h1 {
+    margin: 0 1rem;
+    font-size: 3rem;
+  }
+
+  .current-sponsors {
+    margin: 5rem 0;
+  }
+  .current-sponsors h2 {
+    font-size: 1.6rem;
+  }
+  .current-sponsors p {
+    font-size: 0.75rem;
+    margin: 2rem 1rem;
+  }
+  .current-sponsors hr {
+    width: 25%;
+  }
+  .sponsor-desc{
+    padding: 0.6rem;
+  }
+  .sponsor-box {
+    width: 160px;
+    height: 200px;
+    margin: 10px;
+  }
+  .sponsor-name{
+    font-size: 0.9rem;
+    letter-spacing: normal;
+  }
+  .sponsor-info{
+    font-size: 0.6rem;
+  }
+  .present-box{
+    padding: 0;
+  }
+
+  .old-sponsors h2 {
+    font-size: 1.6rem;
+  }
+  .old-sponsors hr {
+    width: 25%;
+  }
+
+  .slide img {
+    height: 6.5em;
+    width: 6.5em;
+    padding: 10px;
+  }
+}
