@@ -1,0 +1,547 @@
+/*Font family import from Google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+    background: #000000;
+}
+
+.main-bg {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: url("images/WhatsApp Image 2024-09-04 at 20.51.59.jpeg");
+    background-size: 100% 100%;
+    height: 800px;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-bg::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    transition: background-color 0.6s;
+    z-index: 1000;
+}
+
+nav.sticky-nav {
+    background-color: #000000;
+}
+
+nav:after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+nav .logo {
+    float: left;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+}
+
+nav ul li {
+    
+    display: inline-block;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 15px;
+    transition: color 0.3s;
+}
+
+nav ul li:hover {
+    border-bottom: solid 2px white;
+}
+
+nav ul ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top 0.3s;
+}
+
+nav ul li:hover>ul {
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul ul li {
+    position: relative;
+    margin: 0px;
+    width: 170px;
+    float: none;
+    display: list-item;
+    text-align: left;
+    background: rgba(145, 167, 171, 0.5);
+}
+
+nav.sticky-nav ul ul li {
+    background: #0D335D;
+}
+
+nav ul ul li a {
+    line-height: 40px;
+}
+
+.show,
+input {
+    display: none;
+}
+
+.icon {
+    display: none;
+}
+
+.mun-name {
+    position: relative;
+    bottom: 75px;
+    cursor: default;
+}
+
+.mun-name h1 {
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+}
+
+.mun-name h3 {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.mun-name p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+.sponsor {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mun-name img {
+    width: 100%;
+}
+
+.sponsor p {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.sponsor-img {
+    width: 10rem;
+}
+
+p#sponsor {
+    margin-top: 0;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+.mun-info {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.mun-info h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.mun-info p {
+    color: #1A508B;
+    font-size: 1rem;
+    margin: 2rem 3rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.mun-info .apply {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 1.5rem 3rem;
+    background-color: #0D335D;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: background-color 0.2s;
+}
+
+.mun-info .apply:hover {
+    background-color: #1a2129;
+}
+
+.iiti-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: url("images/flags 2.jpg") no-repeat;
+    background-size: 140% 100%;
+    height: 600px;
+}
+
+.iiti-info::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.iiti-info h2 {
+    position: relative;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.iiti-info p {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    margin: 2rem 8rem;
+    line-height: 2;
+    text-align: center;
+}
+
+.iiti-info .know {
+    margin-top: 1rem;
+    position: relative;
+    text-align: center;
+    color: #0D335D;
+    text-decoration: none;
+    padding: 1.5rem 3rem;
+    border: solid 1px white;
+    background-color: white;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+.iiti-info .know:hover {
+    
+    background-color: #000000;
+    color: white;
+    transform: scale(0.96);
+}
+
+.footer-container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer {
+    border-top: solid 30px #000000;
+    background-color: #06182d;
+    padding-top: 100px;
+}
+
+.footer-col {
+    width: 50%;
+    padding: 0 15px;
+    margin-bottom: 150px;
+    padding-left: 50px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: white;
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+    background-color: red;
+}
+
+.footer-col p {
+    color: white;
+    font-size: 15px;
+}
+
+.footer-col .social a {
+    border: solid 1px white;
+    padding-top: 2px;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social a:hover {
+    color: #0D335D;
+    background-color: white;
+}
+
+.copyright-footer {
+    background-color: black;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright-footer p {
+    color: white;
+}
+
+@media (max-width:574px) {
+    .main-bg {
+        height: 920px;
+    }
+    .mun-name h1 {
+        font-size: 4rem;
+    }
+    .mun-name h3 {
+        font-size: 1.4rem;
+    }
+    .mun-name p {
+        font-size: 1.1rem;
+        margin: 1rem;
+    }
+    .sponsor {
+        transform: scale(0.7);
+    }
+    p#sponsor {
+        margin: 1px;
+    }
+    .mun-info {
+        margin: 5rem 1rem;
+    }
+    .mun-info h2 {
+        font-size: 1.6rem;
+        margin: 0 5rem;
+    }
+    .mun-info p {
+        font-size: 0.75rem;
+        margin: 2rem 1rem;
+        line-height: 1.5;
+        text-align: justify;
+    }
+    .iiti-info h2 {
+        font-size: 1.6rem;
+    }
+    .iiti-info p {
+        font-size: 0.75rem;
+        margin: 2rem 1rem;
+        line-height: 2;
+        text-align: justify;
+    }
+    .footer-col {
+        width: 100%;
+    }
+}
+
+@media (max-width:775px) {
+    nav {
+        background: #0D335D;
+        padding-bottom: 10px;
+        flex-direction: column;
+    }
+    nav ul li,
+    nav ul ul li {
+        display: block;
+        width: 100%;
+    }
+    nav ul ul {
+        top: 70px;
+        position: static;
+        border-top: none;
+        float: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+    }
+    nav ul ul li {
+        padding-left: 60px;
+        line-height: 70px;
+        background: transparent;
+    }
+    nav ul ul li:hover {
+        border: none;
+    }
+    .show {
+        display: block;
+        color: white;
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 70px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+    .icon {
+        display: block;
+        color: white;
+        position: absolute;
+        right: 40px;
+        line-height: 70px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    nav ul li:hover {
+        border-bottom: none;
+    }
+    .show+a,
+    ul {
+        display: none;
+    }
+    [id=about]:checked+ul,
+    [id=bars]:checked+ul {
+        display: block;
+    }
+    .mun-name {
+        position: relative;
+        bottom: 0;
+    }
+    .mun-info {
+        margin: 5rem 0;
+    }
+    .mun-info p {
+        text-align: justify;
+    }
+    .iiti-info p {
+        margin: 2rem 2rem;
+        text-align: justify;
+    }
+    .timer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background: url("") no-repeat;
+        background-size: 100% 100%;
+        height: 600px;
+    }
+    /* Style for the footer's social media and details sections */
+.footer-col {
+    width: 50%;
+    padding: 0 15px;
+    margin-bottom: 150px;
+    padding-left: 50px;
+    box-sizing: border-box; /* Ensure padding does not affect the width */
+}
+
+/* Additional styling for the social media and details section */
+.social-container {
+    display: flex;
+    justify-content: space-between; /* Ensure space between social media and details */
+    align-items: flex-start; /* Align items to the start */
+    flex-wrap: wrap;
+}
+
+/* Style for the 'Details' heading */
+.details-heading {
+    font-size: 18px; /* Ensure font size matches the contact heading */
+    color: white; /* Matching the theme */
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+/* Style for the PDF buttons container */
+.pdf-buttons {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+/* Style for the PDF buttons */
+.pdf-button {
+    display: inline-block;
+    background-color: white;
+    color: #0D335D; /* Match this color to your theme */
+    border: 2px solid #0D335D;
+    padding: 12px 24px;
+    border-radius: 50px; /* Makes the button pill-shaped */
+    cursor: pointer;
+    font-size: 16px; /* Match font size to 'Details' heading */
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    /* Ensure the button size is consistent */
+    line-height: 1.5; /* Centers the text vertically */
+}
+
+.pdf-button:hover {
+    background-color: #0D335D;
+    color: white; /* Change text color to white on hover */
+    border-color: #0D335D;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Highlight effect */
+}
+
+
+
+}

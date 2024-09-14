@@ -1,0 +1,795 @@
+/*Font family import from Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html,body {
+  background: #000000;
+}
+
+.apply-bg {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: url("images/IMG_4604.JPG") no-repeat;
+  background-size: 100% 100%;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+}
+.apply-bg::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  padding-top: 10px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  transition: background-color 0.6s;
+  z-index: 1000;
+}
+nav.sticky-nav {
+  background-color: #000000;
+}
+
+nav:after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+nav .logo {
+  float: left;
+}
+
+nav ul {
+  float: right;
+  list-style: none;
+  margin-right: 40px;
+  position: relative;
+}
+
+nav ul li {
+  float: left;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 70px;
+  font-size: 18px;
+  padding: 8px 15px;
+  transition: color 0.3s;
+}
+nav ul li:hover {
+  border-bottom: solid 2px white;
+}
+
+nav ul ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 90px;
+  opacity: 0;
+  visibility: hidden;
+  transition: top 0.3s;
+}
+nav ul li:hover > ul {
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+nav ul ul li {
+  position: relative;
+  margin: 0px;
+  width: 170px;
+  float: none;
+  display: list-item;
+  text-align: left;
+  background: rgba(145, 167, 171, 0.5);
+}
+
+nav.sticky-nav ul ul li {
+  background: #007bff;
+}
+nav ul ul li a{
+  line-height: 40px;
+}
+
+.show, input {
+  display: none;
+}
+.icon {
+  display: none;
+}
+
+.apply-title{
+  position: relative;
+  cursor: default;
+}
+.apply-title h1 {
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  margin: 0 2rem;
+}
+.event-register {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 5rem;
+  justify-content: center;
+  align-items: center;
+}
+.event-register h2 {
+  color: #1A508B;
+  font-size: 2.5rem;
+  margin: 3rem 3rem 0;
+  line-height: 1.5;
+  text-align: center;
+}
+.event-register p {
+  color: #1A508B;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 20px;
+}
+a.ref {
+  color: green;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+a.ref:hover {
+  text-decoration: underline;
+}
+a.ref:visited{
+  color: green;
+  text-decoration: none;
+}
+
+.open {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  width: 300px;
+  color: #007bff;
+  padding: 1rem 0;
+  cursor: pointer;
+  border: solid 2px #007bff;
+  border-radius: 3px;
+  transition: transform 0.2s;
+}
+.open:hover {
+  text-decoration: underline;
+  transform: scale(1.02);
+}
+
+.popup-container {
+  z-index: 2000;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+.popup-container.appear {
+  pointer-events: auto;
+  opacity: 1;
+}
+.fees-popup{
+  background-color: white;
+  width: 75vw;
+  border-radius: 5px;
+  transform: scale(0.1);
+  transition: 0.2s;
+}
+.popup-container.appear .fees-popup {
+  transform: scale(1);
+}
+
+.title-box {
+  background-color: #06182d;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: solid 2px white;
+}
+.title-box button{
+  background: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+.title-box img{
+  height: 70px;
+}
+.title-box h2{
+  padding: 0 60px;
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.eb-register, .ca {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 5rem;
+  justify-content: center;
+  align-items: center;
+}
+.apply-btn {
+  width: 300px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding: 1.5rem 1.5rem;
+  margin: 0.5rem 1rem;
+  background-color: #007bff;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: background-color 0.2s;
+}
+.apply-btn:hover{
+  background-color: #1A508B;
+}
+
+.press {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: url("images/LOGtxt - SPARK MUN.JPG") no-repeat;
+  background-size: 100% 100%;
+  height: 500px;
+  color: white;
+  margin-top: 3rem;
+}
+.press::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.6);
+}
+.press h2, .press p, .press a {
+  position: relative;
+}
+.press h2{
+  font-size: 2.5rem;
+  padding-top: 4rem;
+}
+.press h2>p{
+  font-size: 1rem;
+}
+.press-info p{
+  margin: 3.5rem;
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+.press .open{
+  position: relative;
+  color: white;
+  border-color: white;
+  margin-bottom: 0;
+}
+.ip-guide, .ip-apply {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  position: relative;
+  text-align: center;
+  color: #007bff;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  border: solid 1px white;
+  background-color: white;
+  border-radius: 5px;
+  transition: 0.2s;
+  width: 300px;
+}
+.ip-guide:hover, .ip-apply:hover {
+  color: white;
+  background-color: #007bff;
+}
+.press .title-box h2{
+  padding: 0 60px;
+  color: white;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.ca {
+  margin: 0 0 3rem;
+  background-color: #06182d;
+  padding: 5rem 3rem;
+}
+.ca h2{
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+.ca-info {
+  color: white;
+  margin: 2rem 2rem;
+}
+.ca-info p{
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.eb-register h2{
+  color: #007bff;
+  font-size: 2rem;
+  text-align: center;
+}
+.eb-register hr, .ca hr {
+  width: 10%;
+  height: 3px;
+  border: none;
+  background: red;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.eb-content{
+  color: #1A508B;
+  margin: 2rem 2rem;
+}
+
+table, th, td {
+  border: 1px solid #06182d;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 20px;
+  text-align: center;
+}
+th {
+  color: #007bff;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.pricing-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+.pricing-table table, th, td{
+  border: 2px solid #06182d;
+}
+.pricing-table td {
+  color: #1A508B;
+}
+
+.ca .ca-btn, .brochure{
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  position: relative;
+  text-align: center;
+  color: #007bff;
+  text-decoration: none;
+  padding: 1.5rem 3rem;
+  border: solid 1px white;
+  background-color: white;
+  border-radius: 5px;
+  transition: 0.2s;
+  width: 300px;
+}
+.brochure {
+  background-color: #007bff;
+  color: white;
+}
+.ca .ca-btn:hover, .brochure:hover{
+  background-color: #1A508B;
+  color: white;
+}
+
+.eb-btn{
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding: 1.5rem 1.5rem;
+  background-color: #007bff;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: background-color 0.2s;
+}
+.eb-btn:hover{
+  background-color: #1A508B;
+}
+
+.footer-container {
+  max-width: 1170px;
+  margin: auto;
+}
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer {
+  border-top: solid 30px #000000;
+  background-color: #06182d;
+  padding-top: 100px;
+}
+.footer-col {
+  width: 50%;
+  padding: 0 15px;
+  margin-bottom: 150px;
+  padding-left: 50px;
+}
+.footer-col h4 {
+  font-size: 18px;
+  color: white;
+  position: relative;
+  margin-bottom: 35px;
+}
+.footer-col h4::before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  bottom: -10px;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+  background-color: red;
+}
+.footer-col p {
+  color: white;
+  font-size: 15px;
+}
+.footer-col .social a{
+  border: solid 1px white;
+  padding-top: 2px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255,255,255,0.1);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.5s ease;
+}
+.footer-col .social a:hover {
+  color: #007bff;
+  background-color: white;
+}
+.copyright-footer {
+  background-color: black;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.copyright-footer p {
+  color: white;
+}
+
+@media (max-width:775px){
+  nav {
+    background: #007bff;
+    padding-bottom: 10px;
+    flex-direction: column;
+  }
+
+  nav ul li, nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+  nav ul ul {
+    top: 70px;
+    position: static;
+    border-top: none;
+    float: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  nav ul ul li {
+    padding-left: 60px;
+    line-height: 70px;
+    background: transparent;
+  }
+  nav ul ul li:hover {
+    border: none;
+  }
+  .show {
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .icon {
+    display: block;
+    color: white;
+    position: absolute;
+    right: 40px;
+    line-height: 70px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  nav ul li:hover {
+    border-bottom: none;
+  }
+
+  .apply-title h1 {
+    margin: 0 3.5rem;
+    font-size: 3.5rem;
+  }
+
+  .event-register h2 {
+    font-size: 2rem;
+    margin: 3rem 1rem 0;
+  }
+  th,td{
+    padding: 25px;
+  }
+  .show + a, ul {
+    display: none;
+  }
+  [id=about]:checked + ul,[id=bars]:checked + ul {
+    display: block;
+  }
+
+  .title-box img {
+    height: 60px;
+  }
+  .title-box h2, .press .title-box h2 {
+    font-size: 1.5rem;
+    padding: 20px;
+    margin: 0;
+  }
+  .title-box button {
+    font-size: 1.5rem;
+  }
+  .pricing-table {
+    transform: scale(0.85);
+  }
+  .pricing-table th, .pricing-table td{
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .press {
+    height: 650px;
+  }
+  .press h2{
+    font-size: 2.1rem;
+    padding-top: 2.5rem;
+  }
+  .press p{
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .details-heading {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 30px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .pdf-buttons {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .pdf-button {
+    background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 5px;
+    border-radius: 30px; /* Rounded rectangle shape */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .pdf-button:hover {
+    background-color: rgb(255, 255, 255);
+    color: white; /* Change text color to white on hover */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Highlight effect */
+    transform: scale(1.1); /* Slightly enlarges the button on hover */
+    cursor: pointer;
+  }
+  .demo{
+    width: 100px;
+    height: 200px;
+    background: blue;
+    border-radius: 60px;
+}
+
+}
+
+@media (max-width:574px) {
+  .footer-col {
+    width: 100%;
+  }
+
+  .apply-title h1 {
+    margin: 0 1rem;
+    font-size: 3rem;
+  }
+  .event-register {
+    margin:0;
+  }
+  .event-register h2 {
+    font-size: 1.5rem;
+    margin: 3rem 1rem 0;
+  }
+  .event-register p {
+    font-size: 0.75rem;
+    margin: 1rem 1.5rem;
+  }
+  a.ref {
+    font-size: 1rem;
+  }
+
+  .fees-popup {
+    width: 90vw;
+  }
+  .pricing-table {
+    transform: scale(0.85);
+  }
+  .pricing-table th, .pricing-table td{
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .title-box img {
+    height: 60px;
+  }
+  .title-box h2, .press .title-box h2 {
+    font-size: 1rem;
+    padding: 20px;
+    margin: 0;
+  }
+  .title-box button {
+    font-size: 1rem;
+  }
+
+  .eb-register h2, .ca h2 {
+    font-size: 1.6rem;
+  }
+  .eb-register hr, .ca hr {
+    width: 25%;
+  }
+  th,td{
+    padding: 20px;
+  }
+
+  .ca {
+    padding: 5rem 0;
+  }
+  .ca h2 {
+    padding: 0 3rem;
+  }
+  .ca-info p{
+    margin: 2rem 0;
+  }
+
+  .eb-content {
+    margin:0 2rem;
+    transform: scale(0.65);
+  }
+
+  .press {
+    height: 720px;
+  }
+  .press h2{
+    font-size: 1.7rem;
+    padding-top: 3rem;
+  }
+  .press p {
+    font-size: 0.85rem;
+    margin: 1.5rem;
+  }
+  .press h2+p {
+    margin: 0.5rem;
+  }
+  /* Style for the footer's social media and details sections */
+.footer-col {
+  width: 50%;
+  padding: 0 15px;
+  margin-bottom: 150px;
+  padding-left: 50px;
+  box-sizing: border-box; /* Ensure padding does not affect the width */
+}
+
+/* Additional styling for the social media and details section */
+.social-container {
+  display: flex;
+  justify-content: space-between; /* Ensure space between social media and details */
+  align-items: flex-start; /* Align items to the start */
+  flex-wrap: wrap;
+}
+
+/* Style for the 'Details' heading */
+.details-heading {
+  font-size: 18px; /* Ensure font size matches the contact heading */
+  color: white; /* Set text color to white */
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+/* Style for the PDF buttons container */
+.pdf-buttons {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  margin-top: 20px;
+}
+
+/* Style for the PDF buttons */
+.pdf-button {
+  display: inline-block;
+  background-color: white;
+  color: #0D335D; /* Text color for button */
+  border: 2px solid #0D335D;
+  padding: 12px 24px;
+  border-radius: 50px; /* Makes the button pill-shaped */
+  cursor: pointer;
+  font-size: 16px; /* Font size for button text */
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  /* Ensure the button size is consistent */
+  line-height: 1.5; /* Centers the text vertically */
+}
+
+.pdf-button:hover {
+  background-color: #0D335D;
+  color: white; /* Change text color to white on hover */
+  border-color: #0D335D;
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Highlight effect */
+}
+
+
+  
+  
+
+}
