@@ -9,14 +9,14 @@
 }
 
 html,body {
-  background: #FFF3E6;
+  background: #000000;
 }
 
 .coms-bg {
   display: flex;
   flex-direction: column;
   position: relative;
-  background: url("/images/") no-repeat;
+  background: url("images/5.jpg") no-repeat;
   background-size: 100% 100%;
   height: 500px;
   align-items: center;
@@ -46,7 +46,7 @@ nav {
   z-index: 1000;
 }
 nav.sticky-nav {
-  background-color: #0D335D;
+  background-color: #000000;
 }
 
 nav:after {
@@ -98,6 +98,7 @@ nav ul li:hover > ul {
   top: 70px;
   opacity: 1;
   visibility: visible;
+  transition: all 1s ease;
 }
 nav ul ul li {
   position: relative;
@@ -107,6 +108,7 @@ nav ul ul li {
   display: list-item;
   text-align: left;
   background: rgba(145, 167, 171, 0.5);
+  
 }
 
 nav.sticky-nav ul ul li {
@@ -128,10 +130,11 @@ nav ul ul li a{
   cursor: default;
 }
 .coms-title h1 {
-  font-size: 4rem;
+  font-size: 6rem;
   color: white;
   text-align: center;
   margin: 0 2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .coms-section {
@@ -142,12 +145,12 @@ nav ul ul li a{
   margin: 30px auto;
 }
 .coms-box {
-  margin: 10px auto;
+  margin: 20px auto;
   width: 80vw;
   border-radius: 10px;
 }
 .coms-box:nth-of-type(2n+1){
-  background-image: linear-gradient(to right, white , #1961b3);
+  background-image: linear-gradient(to right, rgb(216, 220, 235) , #1961b3);
 }
 .coms-box:nth-of-type(2n){
   background-image: linear-gradient(to left, white , #1961b3);
@@ -157,6 +160,10 @@ nav ul ul li a{
   display: flex;
   flex-direction: column;
   align-items: center;
+  .bold-text {
+    font-weight: 700;
+}
+
 }
 .coms-box:nth-of-type(2n+1) .com-info {
   display: flex;
@@ -205,8 +212,12 @@ nav ul ul li a{
 .coms-box:hover .com-desc {
   /* display: block; */
   padding: 30px;
+  font-size: 30px;
   text-align: justify;
   max-height: 500px;
+  font-weight: 700;
+
+
 }
 .coms-box:hover .com-desc p {
   opacity: 1;
@@ -247,7 +258,7 @@ nav ul ul li a{
 
 .popup-container {
   z-index: 2000;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(255, 255, 255, 0.151);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -264,7 +275,7 @@ nav ul ul li a{
   opacity: 1;
 }
 .eb-popup{
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: 70vw;
   border-radius: 5px;
   transform: scale(0.1);
@@ -302,7 +313,7 @@ nav ul ul li a{
   padding: 1rem;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  border: solid 2px white;
+  border: solid 2px rgb(0, 0, 0);
 }
 .title-box button{
   background: transparent;
@@ -336,6 +347,7 @@ nav ul ul li a{
 }
 .eb-person img {
   width: 100%;
+  height: 75%;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
@@ -357,6 +369,7 @@ nav ul ul li a{
 .eb-name {
   font-size: 1.1rem;
   padding-bottom: 5px;
+  color: white;
 }
 .eb-position {
   font-size: 0.8rem;
@@ -397,7 +410,7 @@ a.bg-guide {
   flex-wrap: wrap;
 }
 .footer {
-  border-top: solid 30px #FFF3E6;
+  border-top: solid 30px #000000;
   background-color: #06182d;
   padding-top: 100px;
 }
@@ -433,7 +446,7 @@ a.bg-guide {
   display: inline-block;
   height: 40px;
   width: 40px;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   margin: 0 10px 10px 0;
   text-align: center;
   line-height: 40px;
@@ -590,6 +603,7 @@ a.bg-guide {
   }
   .eb-name {
     font-size: 14px;
+    color: white;
   }
   .eb-position {
     font-size: 9px;
